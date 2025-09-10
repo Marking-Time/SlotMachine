@@ -1,0 +1,1 @@
+video stop at 34:00
