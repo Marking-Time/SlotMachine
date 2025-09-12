@@ -23,10 +23,11 @@ def get_slot_machine_spin(rows, cols, symbols):
         for _ in range(symbol_count):
             all_symbols.append(symbol)
     columns = []
-    for _ in range(COLS):
+    for _ in range(cols):
         column = []
-        current_symbol = all_symbols[:] """ creates a copy of all_symbols, so they aren't linked"""
-        for _ in range(ROWS):
+        current_symbol = all_symbols[:] 
+        """ creates a copy of all_symbols, so they aren't linked"""
+        for _ in range(rows):
             value = random.choice(current_symbols)
             current_symbols.remove(value)
             column.append(value)
@@ -34,12 +35,13 @@ def get_slot_machine_spin(rows, cols, symbols):
     return columns
             
 def print_slot_machine(columns):
-    for row in range(len(columns[0]):
+    for row in range(len(columns[0])):
         for i, column in enumerate(columns):
-            if != len(columns) -1:
-                print(column[row], " | ")
+            if i != len(columns) -1:
+                print(column[row], end=" | ")
             else:
-                print(ccolumn[row])
+                print(column[row], end="")
+        print()
 
 """ Collects an amount for the deposit"""
 def deposit():
@@ -82,6 +84,8 @@ def get_bet():
             print("Please enter a number")
     return amount
     
+    slots = get_slot_machine_spin(ROWS, COLS, symbol_count) 
+    print_slot_machine(slots)
 
 """ The primary body of the program"""   
 def main():
@@ -100,4 +104,5 @@ def main():
     print(f"You are betting ${bet} on {lines} lines. The total bet is ${total_bet}. ")
     #print(balance, lines)
     
+
 main()
