@@ -28,19 +28,29 @@ def get_slot_machine_spin(rows, cols, symbols):
         current_symbol = all_symbols[:] 
         """ creates a copy of all_symbols, so they aren't linked"""
         for _ in range(rows):
-            value = random.choice(current_symbols)
-            current_symbols.remove(value)
+            value = random.choice(current_symbol)
+            current_symbol.remove(value)
             column.append(value)
         columns.append(column)
     return columns
             
+#def print_slot_machine(columns):
+#    for row in range(len(columns[0])):
+#        for i, column in #enumerate(columns):
+#            if i != len(columns) -1:
+#                print(column[row], end=" | ")
+#            else:
+#                print(column[row], end="")
+#        print()
+
 def print_slot_machine(columns):
     for row in range(len(columns[0])):
         for i, column in enumerate(columns):
-            if i != len(columns) -1:
+            if i != len(columns) - 1:
                 print(column[row], end=" | ")
             else:
                 print(column[row], end="")
+
         print()
 
 """ Collects an amount for the deposit"""
@@ -102,6 +112,9 @@ def main():
             
     total_bet = bet * lines
     print(f"You are betting ${bet} on {lines} lines. The total bet is ${total_bet}. ")
+    
+    slots = get_slot_machine_spin(ROWS,COLS,symbol_count)
+    print_slot_machine(slots)
     #print(balance, lines)
     
 
