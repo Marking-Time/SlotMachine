@@ -1,1 +1,4 @@
-video stop at 34:00
+video stop at:
+ 34:00
+ 36:00
+ 
